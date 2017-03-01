@@ -1,0 +1,28 @@
+<h2>Listing funchies</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for funchy <- @funchies do %>
+    <tr>
+      <td><%= funchy.name %></td>
+      <td><%= funchy.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: funchy_path(@conn, :show, funchy), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: funchy_path(@conn, :edit, funchy), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: funchy_path(@conn, :delete, funchy), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New funchy", to: funchy_path(@conn, :new) %>

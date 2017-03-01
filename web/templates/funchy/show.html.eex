@@ -1,0 +1,18 @@
+<h2>Show funchy</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @funchy.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @funchy.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: funchy_path(@conn, :edit, @funchy) %>
+<%= link "Back", to: funchy_path(@conn, :index) %>

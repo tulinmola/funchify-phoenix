@@ -1,1 +1,16 @@
 /* This file is for your main application css. */
+
+h1 a {
+  color: #888;
+}
+
+h1 a:hover {
+  text-decoration: none;
+}
+
+.mega-link {
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  line-height: 48px;
+}

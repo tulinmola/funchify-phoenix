@@ -1,0 +1,6 @@
+<h2>Edit funchy</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: funchy_path(@conn, :update, @funchy) %>
+
+<%= link "Back", to: funchy_path(@conn, :index) %>
