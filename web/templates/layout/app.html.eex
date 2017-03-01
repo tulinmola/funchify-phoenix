@@ -30,7 +30,16 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+      <footer>
+        <h3>Follow us</h3>
+        <ul class="contact">
+          <li><%= link "", to: "https://github.com/tulinmola/funchify-phoenix", class: "fa fa-github-alt"%></li>
+          <li><%= link "", to: "https://twitter.com/funchify", class: "fa fa-twitter"%></li>
+          <li><%= link "", to: "mailto:funchify.com@gmail.com", class: "fa fa-envelope"%></li>
+        </ul>
+      </footer>
     </div> <!-- /container -->
+    <script src="https://use.fontawesome.com/b96058ca85.js"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
