@@ -58,4 +58,24 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+
+# For this example we have no secrets file. All secrets come from environment
+# variables:
+
+# :secret_key_base is a secret key used as a base to generate secrets for
+# encrypting and signing data. For example, cookies and tokens are signed by
+# default but they may also be encrypted if desired. Defaults to nil as it *must
+# be set per application*.
+config :funchify, Funchify.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  # secret_key_base: "XN12eHZ57Fkv5x6Y8GGfh6V/5c3upZSXvQmEaLa0LnRFHQMpnY7ikI0E9o3ucsJL"
+
+# Configure database
+config :funchify, Funchify.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DB_USERNAME"),
+  password: System.get_env("DB_PASSWORD"),
+  database: System.get_env("DB_DATABASE"),
+  hostname: System.get_env("DB_HOSTNAME"),
+  pool_size: 20
