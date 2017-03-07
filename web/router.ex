@@ -21,7 +21,9 @@ defmodule Funchify.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Funchify do
-  #   pipe_through :api
-  # end
+  scope "/api", Funchify do
+    pipe_through :api
+
+    get "/heartbeat", HeartbeatController, :index
+  end
 end
