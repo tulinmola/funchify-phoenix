@@ -32,6 +32,9 @@ RUN MIX_ENV=prod mix compile
 RUN NODE_ENV=production node_modules/brunch/bin/brunch build --production
 RUN MIX_ENV=prod mix phoenix.digest
 
+# Execute database migragions
+RUN MIX_ENV=prod mix ecto.migrate
+
 # Exposes this port from the docker container to the host machine
 EXPOSE 4000
 
