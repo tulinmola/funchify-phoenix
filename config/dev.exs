@@ -36,8 +36,9 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :funchify, Funchify.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "",
   database: "funchify_dev",
   hostname: "localhost",
+  port: 26257,
   pool_size: 10

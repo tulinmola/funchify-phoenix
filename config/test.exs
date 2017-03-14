@@ -16,4 +16,5 @@ config :funchify, Funchify.Repo,
   password: "postgres",
   database: "funchify_test",
   hostname: "localhost",
+  port: 26257,
   pool: Ecto.Adapters.SQL.Sandbox

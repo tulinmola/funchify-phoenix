@@ -78,4 +78,5 @@ config :funchify, Funchify.Repo,
   password: System.get_env("DB_PASSWORD"),
   database: System.get_env("DB_DATABASE"),
   hostname: System.get_env("DB_HOSTNAME"),
+  port: System.get_env("DB_PORT"),
   pool_size: 20
